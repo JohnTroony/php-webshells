@@ -1,4 +1,6 @@
 php-webshells
 =============
 
-Common php webshells. Do not host the file(s) in your server!
+Common PHP shells. Do not put these on a publically-accessible webserver.
+
+These are provided for education purposes only.
