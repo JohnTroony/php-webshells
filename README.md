@@ -2,9 +2,6 @@ Contributing
 ============
 To contribute other shells not listed here... Fork, Push the changes to your repo, then before you request for a Pull, make sure to include a simple description of your **php** web-shell and include a screen-shot of the web-shell (as hosted in your localhost).
 
-
-
-
 php-webshells
 =============
 
