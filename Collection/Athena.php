@@ -1,11 +1,34 @@
 <?php
-   
+    /**
+    MIT License
+
+    Copyright (c) 2021 0x4e
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+    */
     session_start();
 
     define( "RANDOM_ID", md5( rand() ) );
-	  define( "SERVER_NAME", $_SERVER['SERVER_NAME'] );
-	  define( "SERVER_IP_PORT", $_SERVER['SERVER_ADDR'].":".$_SERVER['SERVER_PORT'] );
-	  define( "SERVER_SOFTWARE", $_SERVER['SERVER_SOFTWARE'] );
+    define( "SERVER_NAME", $_SERVER['SERVER_NAME'] );
+    define( "SERVER_IP_PORT", $_SERVER['SERVER_ADDR'].":".$_SERVER['SERVER_PORT'] );
+    define( "SERVER_SOFTWARE", $_SERVER['SERVER_SOFTWARE'] );
 	
 
     $_AUTH              = 1;
@@ -137,45 +160,45 @@
         }
     }
 	
-    /** Thanks Gist <https://gist.github.com/Balamir/4a19b3b0a4074ff113a08a92908302e2> */
-    function get_os(){
+	/** Thanks Gist <https://gist.github.com/Balamir/4a19b3b0a4074ff113a08a92908302e2> */
+	function get_os(){
+		
+		$_U		= $_SERVER['HTTP_USER_AGENT'];
+		$_O		= "";
+		
+		$_OA =   array(
+			'/windows nt 10/i'      =>  'Windows 10',
+			'/windows nt 6.3/i'     =>  'Windows 8.1',
+			'/windows nt 6.2/i'     =>  'Windows 8',
+			'/windows nt 6.1/i'     =>  'Windows 7',
+			'/windows nt 6.0/i'     =>  'Windows Vista',
+			'/windows nt 5.2/i'     =>  'Windows Server 2003/XP x64',
+			'/windows nt 5.1/i'     =>  'Windows XP',
+			'/windows xp/i'         =>  'Windows XP',
+			'/windows nt 5.0/i'     =>  'Windows 2000',
+			'/windows me/i'         =>  'Windows ME',
+			'/win98/i'              =>  'Windows 98',
+			'/win95/i'              =>  'Windows 95',
+			'/win16/i'              =>  'Windows 3.11',
+			'/macintosh|mac os x/i' =>  'Mac OS X',
+			'/mac_powerpc/i'        =>  'Mac OS 9',
+			'/linux/i'              =>  'Linux',
+			'/ubuntu/i'             =>  'Ubuntu',
+			'/iphone/i'             =>  'iPhone',
+			'/ipod/i'               =>  'iPod',
+			'/ipad/i'               =>  'iPad',
+			'/android/i'            =>  'Android',
+			'/blackberry/i'         =>  'BlackBerry',
+			'/webos/i'              =>  'Mobile'
+		);
 
-      $_U		= $_SERVER['HTTP_USER_AGENT'];
-      $_O		= "";
-
-      $_OA =   array(
-        '/windows nt 10/i'      =>  'Windows 10',
-        '/windows nt 6.3/i'     =>  'Windows 8.1',
-        '/windows nt 6.2/i'     =>  'Windows 8',
-        '/windows nt 6.1/i'     =>  'Windows 7',
-        '/windows nt 6.0/i'     =>  'Windows Vista',
-        '/windows nt 5.2/i'     =>  'Windows Server 2003/XP x64',
-        '/windows nt 5.1/i'     =>  'Windows XP',
-        '/windows xp/i'         =>  'Windows XP',
-        '/windows nt 5.0/i'     =>  'Windows 2000',
-        '/windows me/i'         =>  'Windows ME',
-        '/win98/i'              =>  'Windows 98',
-        '/win95/i'              =>  'Windows 95',
-        '/win16/i'              =>  'Windows 3.11',
-        '/macintosh|mac os x/i' =>  'Mac OS X',
-        '/mac_powerpc/i'        =>  'Mac OS 9',
-        '/linux/i'              =>  'Linux',
-        '/ubuntu/i'             =>  'Ubuntu',
-        '/iphone/i'             =>  'iPhone',
-        '/ipod/i'               =>  'iPod',
-        '/ipad/i'               =>  'iPad',
-        '/android/i'            =>  'Android',
-        '/blackberry/i'         =>  'BlackBerry',
-        '/webos/i'              =>  'Mobile'
-      );
-
-      foreach ( $_OA as $_R => $_V ) { 
-        if ( preg_match($_R, $_U ) ) {
-          $_O = $_V;
-        }
-      }   
-      return $_O;
-    }
+		foreach ( $_OA as $_R => $_V ) { 
+			if ( preg_match($_R, $_U ) ) {
+				$_O = $_V;
+			}
+		}   
+		return $_O;
+	}
 	
 ?>
 <!DOCTYPE html>
@@ -467,6 +490,10 @@
                                     <?php echo SERVER_SOFTWARE; ?>
                                 </td>
                             </tr>
+				<td class="is_bold">Safe Mode</td>
+                                <td>
+                                    <?php echo ( ini_get( 'safe_mode' )  ? 'ON' : 'OFF' ); ?>
+                                </td>
                         </table>
                     </div>
                 </div>
